@@ -73,7 +73,7 @@ resume_screening_agent/
 
 ## ⚙️ How It Works
 
-
+<!-- update -->
 1. Load Job Description  
 2. Load all resumes from folder  
 3. Parse resumes (TXT/PDF/DOCX)  
