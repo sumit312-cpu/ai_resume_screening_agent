@@ -71,7 +71,6 @@ The system parses resumes, extracts key information, computes similarity using N
 
 
 ## 📂 Project Structure
-
 resume_screening_agent/
 │
 ├── data/
@@ -79,25 +78,37 @@ resume_screening_agent/
 │ └── resumes/
 │ ├── resume_01.txt
 │ ├── resume_02.txt
-│ └── ...
+│ ├── resume_03.txt
+│ ├── resume_04.txt
+│ ├── resume_05.txt
+│ ├── resume_06.txt
+│ ├── resume_07.txt
+│ ├── resume_08.txt
+│ ├── resume_09.txt
+│ └── resume_10.txt
 │
 ├── outputs/
 │ ├── ranked_candidates.csv
 │ └── ranked_candidates.json
 │
 ├── src/
-│ ├── parser.py
+│ ├── agent.py
 │ ├── extractor.py
+│ ├── parser.py
 │ ├── similarity.py
 │ ├── scorer.py
 │ ├── llm_reasoner.py
-│ └── agent.py
+│ └── init.py
+│
+├── tests/
 │
 ├── main.py
 ├── requirements.txt
-├── .env
 ├── .env.example
-├── README.md
+├── .gitignore
+└── README.md
+
+
 
 ---
 
@@ -137,6 +148,7 @@ pip install -r requirements.txt
 python main.py
 
 📊 Example Output
+
 ===== FINAL RANKING =====
 
 
