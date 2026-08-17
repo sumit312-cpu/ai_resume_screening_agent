@@ -1,0 +1,11 @@
+Name: Pooja Verma
+Email: pooja.verma@gmail.com
+
+Skills:
+Python, Excel, Data Visualization, Tableau
+
+Experience:
+1 year as Data Analyst
+
+Education:
+B.Sc in Mathematics

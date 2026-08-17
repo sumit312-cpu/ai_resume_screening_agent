@@ -1,0 +1,11 @@
+Name: Arjun Mehta
+Email: arjun.mehta@gmail.com
+
+Skills:
+Java, C++, OOP, Data Structures
+
+Experience:
+2 years as Software Developer
+
+Education:
+B.Tech in Computer Science

@@ -1,0 +1,11 @@
+Name: Sneha Gupta
+Email: sneha.gupta@gmail.com
+
+Skills:
+Python, Machine Learning, Deep Learning, TensorFlow, NLP
+
+Experience:
+3 years as Data Scientist
+
+Education:
+M.Tech in Data Science

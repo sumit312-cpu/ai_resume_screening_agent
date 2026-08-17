@@ -1,0 +1,11 @@
+Name: Amit Verma
+Email: amit@gmail.com
+
+Skills:
+Python, Machine Learning, Deep Learning, TensorFlow, NLP
+
+Experience:
+3 years as ML Engineer
+
+Education:
+B.Tech in AI

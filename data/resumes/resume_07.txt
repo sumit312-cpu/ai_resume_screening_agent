@@ -1,0 +1,11 @@
+Name: Neha Sharma
+Email: neha.sharma@gmail.com
+
+Skills:
+Python, Pandas, NumPy, Machine Learning, Scikit-learn
+
+Experience:
+2 years as ML Engineer
+
+Education:
+B.Tech in Computer Science

@@ -1,0 +1,11 @@
+Name: Ankit Patel
+Email: ankit.patel@gmail.com
+
+Skills:
+Python, SQL, Pandas, NumPy, Data Visualization, Tableau
+
+Experience:
+2 years as Data Analyst
+
+Education:
+B.Tech in Information Technology

@@ -1,0 +1,11 @@
+Name: Priya Singh
+Email: priya@gmail.com
+
+Skills:
+Python, SQL, Power BI, Excel
+
+Experience:
+1 year as Business Analyst
+
+Education:
+BCA

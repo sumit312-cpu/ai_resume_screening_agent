@@ -1,0 +1,11 @@
+Name: Rahul Sharma
+Email: rahul@gmail.com
+
+Skills:
+Python, SQL, Machine Learning, Pandas, NumPy, NLP
+
+Experience:
+2 years as Data Analyst
+
+Education:
+B.Tech in Computer Science

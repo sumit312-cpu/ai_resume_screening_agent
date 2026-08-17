@@ -1,0 +1,11 @@
+Name: Vivek Singh
+Email: vivek.singh@gmail.com
+
+Skills:
+Python, SQL, NLP, Deep Learning, PyTorch
+
+Experience:
+3 years as NLP Engineer
+
+Education:
+B.Tech in Artificial Intelligence
