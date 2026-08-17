@@ -1,3 +1,8 @@
+# ==============================
+# SCORER MODULE
+# ==============================
+
+# ✅ Skill Match Score
 def skill_match_score(jd_text, resume_skills):
     jd_text = jd_text.lower()
 
@@ -13,30 +18,33 @@ def skill_match_score(jd_text, resume_skills):
     return (match_count / len(resume_skills)) * 100
 
 
-def experience_score(experience_text):
+# ✅ Experience Score (Robust: handles int + string)
+def experience_score(experience):
     import re
 
-    match = re.search(r"(\d+\.?\d*)", experience_text)
+    # If already numeric
+    if isinstance(experience, (int, float)):
+        years = experience
+    else:
+        match = re.search(r"(\d+\.?\d*)", str(experience))
+        years = float(match.group(1)) if match else 0
 
-    if match:
-        years = float(match.group(1))
-
-        if years >= 3:
-            return 100
-        elif years >= 2:
-            return 80
-        elif years >= 1:
-            return 60
-        else:
-            return 40
-
-    return 0
+    # Scoring logic
+    if years >= 3:
+        return 100
+    elif years >= 2:
+        return 80
+    elif years >= 1:
+        return 60
+    else:
+        return 40
 
 
+# ✅ Final Score (Weighted)
 def final_score(similarity, skill_score, exp_score):
     return round(
-        (0.5 * similarity) +
-        (0.3 * skill_score) +
-        (0.2 * exp_score),
+        (0.5 * similarity) +   # NLP similarity weight
+        (0.3 * skill_score) +  # skill match weight
+        (0.2 * exp_score),     # experience weight
         2
     )

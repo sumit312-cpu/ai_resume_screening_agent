@@ -3,18 +3,22 @@
 ## 📌 Overview
 This project is an AI-powered Resume Screening Agent that ranks candidates based on their relevance to a given Job Description.
 
-The system parses resumes, extracts key information, computes similarity using NLP, and generates a ranked shortlist of candidates.
+The system parses resumes (TXT, PDF, DOCX), extracts key information, computes similarity using NLP, and generates a ranked shortlist of candidates with reasoning.
 
 ---
 
 ## 🚀 Features
-- Parse multiple resumes (TXT format)
-- Extract structured data (Name, Email, Skills, Experience, Education)
-- Compute NLP similarity (TF-IDF + Cosine Similarity)
-- Calculate weighted final score
-- Rank candidates automatically
-- Export results to CSV and JSON
-- (Optional) LLM-based reasoning using Groq
+- 📂 Parse resumes in **TXT, PDF, and DOCX formats**
+- 🧠 Extract structured data:
+  - Name
+  - Skills
+  - Experience
+- 🔍 Compute NLP similarity (TF-IDF + Cosine Similarity)
+- 📊 Calculate weighted final score
+- 🏆 Rank candidates automatically
+- 💬 Generate reasoning for each candidate
+- 📁 Export results to **CSV & JSON**
+- ⚡ Optional LLM-based reasoning using Groq
 
 ---
 
@@ -23,52 +27,11 @@ The system parses resumes, extracts key information, computes similarity using N
 - Scikit-learn
 - Pandas
 - NumPy
-- Groq (LLM for reasoning)
+- PyPDF (PDF parsing)
+- python-docx (DOCX parsing)
+- Groq (LLM reasoning)
 
 ---
-
-## 📂 Project Structure
-tcan you write again for readme
-
-Got it 👍 — here is a clean, professional, copy-paste READY README.md for your project.
-
-📄 README.md (Final Version)
-# 🤖 AI Resume Screening Agent
-
-
-## 📌 Overview
-This project is an AI-powered Resume Screening Agent that ranks candidates based on their relevance to a given Job Description.
-
-
-The system parses resumes, extracts key information, computes similarity using NLP, and generates a ranked shortlist of candidates.
-
-
----
-
-
-## 🚀 Features
-- Parse multiple resumes (TXT format)
-- Extract structured data (Name, Email, Skills, Experience, Education)
-- Compute NLP similarity (TF-IDF + Cosine Similarity)
-- Calculate weighted final score
-- Rank candidates automatically
-- Export results to CSV and JSON
-- (Optional) LLM-based reasoning using Groq
-
-
----
-
-
-## 🛠️ Tech Stack
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-- Groq (LLM for reasoning)
-
-
----
-
 
 ## 📂 Project Structure
 resume_screening_agent/
@@ -78,14 +41,9 @@ resume_screening_agent/
 │ └── resumes/
 │ ├── resume_01.txt
 │ ├── resume_02.txt
-│ ├── resume_03.txt
-│ ├── resume_04.txt
-│ ├── resume_05.txt
-│ ├── resume_06.txt
-│ ├── resume_07.txt
-│ ├── resume_08.txt
-│ ├── resume_09.txt
-│ └── resume_10.txt
+│ ├── ...
+│ ├── puneet_Resume.docx
+│ ├── kanchan_tiwari.resume.pdf
 │
 ├── outputs/
 │ ├── ranked_candidates.csv
@@ -112,28 +70,38 @@ resume_screening_agent/
 
 ---
 
+
 ## ⚙️ How It Works
 
-1. Load Job Description
-2. Load all resumes from folder
-3. Extract structured information (skills, experience, education)
-4. Compute similarity using TF-IDF + cosine similarity
-5. Calculate skill match score
-6. Evaluate experience score
-7. Compute final weighted score
-8. Rank all candidates
-9. Save results to CSV and JSON
+
+1. Load Job Description  
+2. Load all resumes from folder  
+3. Parse resumes (TXT/PDF/DOCX)  
+4. Extract structured information (skills, experience, name)  
+5. Compute similarity using TF-IDF + cosine similarity  
+6. Calculate skill match score  
+7. Evaluate experience score  
+8. Compute final weighted score  
+9. Rank all candidates  
+10. Generate reasoning  
+11. Save results to CSV & JSON  
+
 
 ---
 
+
 ## 🧮 Scoring Logic
 
-Final Score is calculated as:
-Final Score =
-50% NLP Similarity
-30% Skill Match
-20% Experience Score
 
+Final Score is calculated as:
+
+
+
+Final Score =
+(0.5 × NLP Similarity)
+
+(0.3 × Skill Match)
+(0.2 × Experience Score)
 
 
 ---
@@ -143,51 +111,68 @@ Final Score =
 
 
 ```bash
+# Activate environment
 conda activate resume_agent
-pip install -r requirements.txt
-python main.py
 
+
+# Install dependencies
+pip install -r requirements.txt
+
+
+# Run project
+python main.py
 📊 Example Output
 
 ===== FINAL RANKING =====
 
 
 1. Sneha Gupta - Score: 71.36
+   Reason: Strong match with required skills
+
+
 2. Rahul Sharma - Score: 64.13
-3. Amit Verma - Score: 61.42
-4. Ankit Patel - Score: 60.26
+   Reason: Moderate match with skills
+
+
 ...
-10. Arjun Mehta - Score: 26.63
-📁 Output Files
-
-The system generates:
-
-outputs/ranked_candidates.csv
-outputs/ranked_candidates.json
-🔐 Environment Variables
-
-Create a .env file and add:
-GROQ_API_KEY="your_api_key_here"
-
-⚠️ Tradeoffs
-Used TF-IDF instead of embeddings for simplicity and speed
-Rule-based extraction instead of advanced NLP parsing
-Currently supports TXT format (can be extended to PDF/DOCX)
 
 
-🔮 Future Improvements
-Add PDF/DOCX resume parsing
-Use embeddings (Sentence Transformers / BERT)
-Build a Streamlit UI
+12. Kanchan Tiwari - Score: 14.57
+   Reason: Weak match, missing key required skills
+
+📁 Output Files:
+
+Generated inside outputs/:
+
+ranked_candidates.csv
+ranked_candidates.json
+
+🔐 Environment Variables:
+Create a .env file:
+
+GROQ_API_KEY=your_api_key_here
+
+⚠️ Limitations:
+
+Scanned PDFs (image-based) are not supported (needs OCR)
+Rule-based extraction (can be improved using NLP models)
+Skill detection is keyword-based
+
+🔮 Future Improvements:
+Add OCR for scanned PDFs (Tesseract)
+Use embeddings (BERT / Sentence Transformers)
+Build Streamlit UI
 Improve skill extraction using NLP
 Add recruiter dashboard
-💡 Use Case
 
-This project can be used by recruiters to:
+💡 Use Case:
+
+This system helps recruiters:
 
 Automatically shortlist candidates
 Reduce manual screening effort
 Improve hiring efficiency
+
 👨‍💻 Author
 
 Sumit Tiwari
