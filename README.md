@@ -34,6 +34,7 @@ The system parses resumes (TXT, PDF, DOCX), extracts key information, computes s
 ---
 
 ## 📂 Project Structure
+```bash
 resume_screening_agent/
 │
 ├── data/
